@@ -26,10 +26,17 @@ public class Main {
     }
 
 
-    public static TreeSet<Integer> jugadoresActivos(int[] servidorA,
-                                                     int[] servidorB,
-                                                     int[] baneados) {
-        // TODO: implemente este método
-        return new TreeSet<>();
+    public static TreeSet<Integer> jugadoresActivos(int[] servidorA, int[] servidorB, int[] baneados) {
+        TreeSet<Integer> activos = new TreeSet<>();
+        for (int i = 0; i < servidorA.length; i++) {
+            activos.add(servidorA[i]);
+        }
+        for (int i = 0; i < servidorB.length; i++) {
+            activos.add(servidorB[i]);
+        }
+        for (int i = 0; i < baneados.length; i++) {
+            activos.remove(baneados[i]);
+        }
+        return activos;
     }
 }
